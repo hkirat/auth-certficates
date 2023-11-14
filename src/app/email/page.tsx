@@ -5,6 +5,7 @@ import ShareCertificateButtons from "@/components/ShareCertificate/ShareCertific
 import { useState } from "react";
 import { OneCertificate } from '@/utils/types/Certificate';
 import { apiCreateCertificate } from "@/apiCalls/certificatesApi";
+import Link from 'next/link';
 
 export default function EmailCertificate() {
   const [email, setEmail] = useState("");
@@ -50,10 +51,11 @@ export default function EmailCertificate() {
           <>
             <div className="mt-12">
               <p>Your Certificate Number: {createdCertificate?.certificateNumber}</p>
-              <a href={"/certificate/" + createdCertificate.certificateNumber} target="_blank" />
-              <button className={`btn_primary_1`}>
-                Download Your Certificate
-              </button>
+              <a href={"/certificate/" + createdCertificate.certificateNumber} target="_blank" >
+                <button className={`btn_primary_1`}>
+                  Download Your Certificate
+                </button>
+              </a>
 
             </div>
             <div className="mt-8">
