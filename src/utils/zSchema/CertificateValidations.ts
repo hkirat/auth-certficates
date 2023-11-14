@@ -1,6 +1,5 @@
 import { z } from 'zod';
 
-import MintCertificateButton from '@/components/NftMintingButton/MintCertificateButton';
 export const createCertificateZSchema = z.object({
   recipientEmail: z.string().min(1).max(400, "Email should be less than 400 characters")
 })
