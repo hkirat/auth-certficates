@@ -17,13 +17,15 @@ export function Navbar() {
   return (
     <nav className="w-full flex justify-between  py-4 h-[12vh] xl:px-20 md:px-14 px-8">
       <span onClick={() => router.push("/")} className=" cursor-pointer flex items-center justify-center gap-4 xl:ml-8 md:ml-4 ml-2">
-        <h1 className="md:text-3xl  text-xl secondary_gradient font-bold ">Certificate Authentication</h1>
+        <h1 className="md:text-3xl  text-xl secondary_gradient font-bold ">100xdevs cohort Certificates</h1>
       </span>
       <span className="flex items-center justify-center gap-4">
         <Link href={"/email"}>
           <button className="btn_primary_1" >Get Certificate</button>
         </Link>
-
+        <a href="https://harkirat.classx.co.in/new-courses/2" target="_blank">
+          <button className="btn_primary_1">Link to cohort</button>
+        </a>
       </span>
     </nav>
   )
