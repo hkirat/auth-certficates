@@ -18,7 +18,8 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ status: false, message: validation.error.errors }, { status: 400 })
     }
 
-    const user = await User.findOne({ recipientEmail: validation.data.recipientEmail.toLowerCase() });
+    const user = await User.findOne({ recipientEmail: { $regex: new RegExp('^' + validation.data.recipientEmail + '$', 'i') } });
+
     if (!user) return NextResponse.json({ status: false, message: "User Not Found" }, { status: 404 });
 
     const _certificate = await Certificate.findOne({ userId: user._id });
