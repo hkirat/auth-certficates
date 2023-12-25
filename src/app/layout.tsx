@@ -1,10 +1,10 @@
 import type { Metadata } from 'next'
 import { Navbar } from '@/components/Navbar'
-import { ToastContainer } from 'react-toastify';
+import { ToastContainer } from 'react-toastify'
 
 import '@/styles/globals.css'
-import 'react-toastify/dist/ReactToastify.css';
-import TopProgressbar from '@/components/Layouts/TopProgressbar';
+import 'react-toastify/dist/ReactToastify.css'
+import TopProgressbar from '@/components/Layouts/TopProgressbar'
 
 export const metadata: Metadata = {
   title: '100xdevs Cohort Certificates',
@@ -18,11 +18,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`bg-primary-bg text-text-color`}>
-        <video className="bg-video" src="/background.mp4" autoPlay loop muted></video>
+      <body className={`bg-primary-bg text-text-color xl:px-20 md:px-14 px-8`}>
+        <video
+          className="bg-video"
+          src="/background.mp4"
+          autoPlay
+          loop
+          muted
+        ></video>
         <TopProgressbar>
           <Navbar />
-
           {children}
         </TopProgressbar>
         <ToastContainer />
